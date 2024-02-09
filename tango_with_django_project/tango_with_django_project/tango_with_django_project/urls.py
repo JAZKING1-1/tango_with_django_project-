@@ -24,7 +24,6 @@ from django.urls import include, path
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('about/', views.about, name='about'),  # URL pattern for the about page
+    path('rango/', include('rango.urls')),  # URL pattern for the about page
 
-]
-static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
